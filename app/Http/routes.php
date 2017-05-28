@@ -14,11 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Signup landing page
 Route::get('/signup', function () {
     return view('users.signup');
 });
-
+//Signin landing page
 Route::get('/signin', function () {
     return view('users.signin');
 });
+
+Route::post('handlesignin', function () {
+    return view('users.signin');
+});
+//handle signup
+Route::post('/handleSignup', ['as' => 'handleSignup', 'uses' =>'UsersController@store']);
+
+

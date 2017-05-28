@@ -1,3 +1,6 @@
+<?
+use Illuminate\Support\MessageBag;
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,13 +37,24 @@
                                     <div class="sign-side-block">
                                         <h1 class="login-title">Welcome to VirtuL</h1>
                                         <p> Art lover can't wait to see what you build </p>
+                                        @if (count($errors) > 0)
+                                            <div class="alert alert-danger">
+                                                @foreach ($errors->all() as $error)
+                                                    {{ $error }}
+                                                @endforeach
+                                            </div>
+                                        @endif
                                         <div class="space20"></div>
-                                        <form id="form-validation" action="" method="get" accept-charset="utf-8">
+                                        {!! Form::open(array('route' => 'handleSignup', 'class' => 'middle_form', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
+                                            {!! Form::hidden('user_id', null) !!}
+                                            {!! Form::hidden('verification_code', null) !!}
+                                            {!! Form::hidden('api', '0') !!}
+                                            {!! Form::token() !!}
                                             <div class="form-group">
-                                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                                {!! Form::email('email', null, array('class' => 'form-control',  'placeholder' => 'Email Address', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password" class="form-control" placeholder="Create a password" required>
+                                                {!! Form::password('password', array('class' => 'form-control',  'placeholder' => 'Create a password', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-signin">Continue</button>
@@ -55,7 +69,7 @@
                                             <div>
                                                 <p> Already have an account, <a href="{{ url('/signin') }}" class="register-link"> Sign in here. </a> </p>
                                             </div>
-                                        </form>
+                                        {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>

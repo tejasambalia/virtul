@@ -14,19 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//Signup landing page
-Route::get('/signup', function () {
-    return view('users.signup');
-});
-//Signin landing page
-Route::get('/signin', function () {
-    return view('users.signin');
-});
 
-Route::post('handleSignin', function () {
-    return view('users.signin');
-});
-//handle signup
-Route::post('/handleSignup', ['as' => 'handleSignup', 'uses' =>'UsersController@store']);
+Route::get('/signin', ['as' => 'signin', 'uses' =>'UsersController@signin']); //Signin landing page
+Route::get('/signup', ['as' => 'signup', 'uses' =>'UsersController@signup']); //Signup landing page
+
+Route::post('/handleSignup', ['as' => 'handleSignup', 'uses' =>'UsersController@store']); //handle signup
+Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@handleSignin']); //handle signin
 
 

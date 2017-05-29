@@ -29,4 +29,9 @@ class User extends Authenticatable
         'email' => 'required|email|unique:users',
         'password' => 'required'
     ];
+
+    public static $signin_validation_rules = [
+        'email' => 'required|email|exists:users',
+        'password' => 'required'
+    ];
 }

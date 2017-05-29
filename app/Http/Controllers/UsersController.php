@@ -88,6 +88,51 @@ class UsersController extends Controller
     }
   }
 
+  public function handleSignin(Request $request){
+    $data = $request->only('email', 'password');
+    $api = $request->only('api');
+
+    if($api['api']==1){
+      //api validation
+      $validator = $this->signinValidator($data);
+      if($validator->fails()){
+        return Response::json(['errors' => $validator->getMessageBag()->toArray()], 200);
+      }
+        
+    }
+    else{
+      //laravel validation
+      $validator = $this->validate($request, User::$signin_validation_rules);
+    }
+
+    //check email verification is done or not
+    $check_verified = DB::table('users')->where('email', $data['email'])->value('verified');
+    if(\Auth::attempt($data)&&$check_verified){
+        //$role = DB::table('users')->where('email', $request['email'])->value('role');
+      if($api['api']==1){
+        return Response::json(['success' => 'true'], 200);
+      }
+      else{
+        return redirect('/');
+      }
+    }
+    else{
+      if($api['api']==1){
+        if($check_verified==0){
+          $msg = "Email Address is not verified!";
+        }
+        else{
+          $msg = "User name or password is invalid";
+        }
+        return Response::json(['errors' => $msg], 200);
+      }
+      else{
+        $msg = "User name or password is invalid";
+        return back()->withInput()->withErrors(['email' => $msg]);   
+      }
+    }
+  }
+
     //verify email and user
     public function verify($userid, $verifyid){
         //get verification code from database
@@ -163,9 +208,24 @@ class UsersController extends Controller
    		}
     }
 
+    public function signin(){
+      return view('users.signin');
+    }
+
+    public function signup(){
+      return view('users.signup');
+    }
+
     private function validator($data){
       return Validator::make($data, array(
         'email' => 'required|email|unique:users',
+        'password' => 'required'
+      ));
+    }
+
+    private function signinValidator($data){
+      return Validator::make($data, array(
+        'email' => 'required|email|exists:users',
         'password' => 'required'
       ));
     }

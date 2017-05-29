@@ -35,12 +35,14 @@
                                         <h1 class="login-title">Welcome to VirtuL</h1>
                                         <p> first we feel then we fall </p>
                                         <div class="space20"></div>
-                                        <form action="" id="form-validation" method="get" accept-charset="utf-8">
+                                        {!! Form::open(array('route' => 'handleSignin', 'class' => 'middle_form', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
+                                            {!! Form::hidden('api', '1') !!}
+                                            {!! Form::token() !!}
                                             <div class="form-group">
-                                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                                {!! Form::email('email', null, array('class' => 'form-control',  'placeholder' => 'Email Address', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                                {!! Form::password('password', array('class' => 'form-control',  'placeholder' => 'Password', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-signin">Continue</button>

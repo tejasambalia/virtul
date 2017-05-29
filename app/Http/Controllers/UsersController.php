@@ -72,9 +72,9 @@ class UsersController extends Controller
 
         Mail::send('mail.emailverify', $mail_data, function ($message) use ($data) {
 
-            $message->from('namaste@knowamp.com', 'KnowAmp');
+            $message->from('art@virtul.in', 'VirtuL');
 
-            $message->to($data['email'])->subject('Verify knowAmp Account');
+            $message->to($data['email'])->subject('Verify VirtuL Account');
 
     		});
     }
@@ -84,7 +84,7 @@ class UsersController extends Controller
     else{
       $msg = 'We have send you verification email please verify it';
       session(['msg' => $msg]);
-      return redirect()->route('login');
+      return redirect()->route('signin');
     }
   }
 

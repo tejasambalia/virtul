@@ -23,7 +23,7 @@ Route::get('/signin', function () {
     return view('users.signin');
 });
 
-Route::post('handlesignin', function () {
+Route::post('handleSignin', function () {
     return view('users.signin');
 });
 //handle signup

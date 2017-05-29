@@ -476,6 +476,64 @@ label {
     color: #333
 }
 
+@media  (max-width: 767px) {
+    .coming_soon {
+        padding: 0 20px;
+    }
+    .mailchimp_form {
+        width: 100%;
+    }
+    .timer_box>li {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+        float: left;
+        margin-bottom: 30px;
+    }
+    .timer_box>li:nth-child(3) {
+        border: 0;
+    }
+    .timer_box>li p {
+        font-size: 10px;
+    }
+    .timer_box>li span {
+        font-size: 30px;
+    }
+    .timer_box:after,
+    .timer_box:before {
+        content: '';
+        clear: both;
+        display: table;
+    }
+    .coming_in, .coming_title {
+        font-size: 18px;
+    }
+    .coming_title {
+        line-height: 1.8;
+    }
+    .coming_soon .carousel {
+    position: relative;
+    height: 130px;
+    overflow: hidden;
+}
+.mailchimp_form .btn {
+    margin-left: 0;
+    margin-top: 20px;
+    display: inline-block;
+    float: none;
+}
+.mailchimp_form .form-control {
+    width: 100%;
+    float: none;
+}
+.mailchimp_form {
+    text-align: center;
+}
+.mailchimp_form .form-group {
+    margin-top: 30px;
+}
+}
+
 /*=====================Coming Soon Section Ends here======================*/
 
 /*===================== Login Section Starts here======================*/

@@ -331,7 +331,7 @@ body {
     font-size: 14px;
     letter-spacing: 0.75px;
     height: 100%;
-    color: #000;
+    color: #474648;
 }
 
 p, ul, ol {
@@ -362,6 +362,10 @@ label {
 
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
     outline: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: #000;
 }
 
 @media (min-width: 1300px) {
@@ -940,5 +944,11 @@ header {
     border-radius: 50%;
     background: #ccc;
 }
+
+.work-box h5>span {
+    border-bottom: 1px solid #ccc;
+    font-weight: 600;
+}
+
 
 /*===================== Profile Ends here  ======================*/

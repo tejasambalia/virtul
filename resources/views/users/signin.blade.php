@@ -36,7 +36,7 @@
                                         <p> first we feel then we fall </p>
                                         <div class="space20"></div>
                                         {!! Form::open(array('route' => 'handleSignin', 'class' => 'middle_form', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
-                                            {!! Form::hidden('api', '1') !!}
+                                            {!! Form::hidden('api', '0') !!}
                                             {!! Form::token() !!}
                                             <div class="form-group">
                                                 {!! Form::email('email', null, array('class' => 'form-control',  'placeholder' => 'Email Address', 'required' => 'required')) !!}

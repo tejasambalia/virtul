@@ -25,4 +25,8 @@ Route::get('/signup', ['as' => 'signup', 'uses' =>'UsersController@signup']); //
 Route::post('/handleSignup', ['as' => 'handleSignup', 'uses' =>'UsersController@store']); //handle signup
 Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@handleSignin']); //handle signin
 
+//email verification
+
+Route::get('/verify/{userid}/{verificationcode}', ['as' => 'verify', 'uses' =>'UsersController@userVerification']); 
+
 

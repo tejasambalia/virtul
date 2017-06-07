@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Classes\General;
 use Mail;
 use DB;
 use Storage;
 use Validator;
 use Response;
+//include (App\Classes\General.php);
 
 class UsersController extends Controller
 {
@@ -19,6 +21,11 @@ class UsersController extends Controller
   { 
     $data = $request->only('email', 'password');
     $api = $request->only('api');
+    // $usermodel = new User;
+    // $usermodel->email = $data['email'];
+    // $usermodel->password = $data['password'];
+    // $usermodel->save();
+    // die();
     
     if($api['api']==1){
       //api validation
@@ -228,5 +235,11 @@ class UsersController extends Controller
         'email' => 'required|email|exists:users',
         'password' => 'required'
       ));
+    }
+
+    public function userVerification($userid,$verificationcode)
+    {
+        $verifyObject = new General();
+        $verifyObject->verifyByUserIdVerifyId($userid,$verificationcode);       
     }
 }

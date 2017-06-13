@@ -332,6 +332,7 @@ body {
     letter-spacing: 0.75px;
     height: 100%;
     color: #474648;
+    padding-top: 60px;
 }
 
 p, ul, ol {
@@ -727,6 +728,11 @@ header {
     color: #fff;
     padding: 0 20px;
     box-shadow: -1px 0px 20px 5px #888;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 .close-btn {
@@ -831,7 +837,133 @@ header {
 
 /*===================== Profile Starts here  ======================*/
 
+.profile_title_box {
+    margin-top: 90px;
+}
 
+.profile_desg.profile_sub_title {
+    margin-top: 0;
+}
+
+.profile_details {
+    font-size: 14px;
+}
+
+.profile_header {
+    background: #fcf8e3;
+    padding: 30px 0;
+}
+
+.profile_img {
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #f1f1f1;
+}
+
+.profile_title {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 20px 0;
+    position: relative;
+    font-family: 'Proza Libre', sans-serif;
+    letter-spacing: -1.5px;
+    word-spacing: 3px;
+}
+
+.profile_title>span {
+    display: inline-block;
+    border-bottom: 2px solid #000;
+}
+
+.profile_sub_title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #000;
+}
+
+.profile_right_box {
+    border-left: 1px solid #eee;
+    padding-left: 40px;
+}
+
+.profile_left_box,
+.profile_right_box {
+    padding-top: 20px;
+}
+
+.profile_right_box .profile_title:after {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 22%;
+    left: -48px;
+    background: #eee;
+    border-radius: 50%;
+}
+
+.portfolio_box ul {
+    margin: 0 -7px;
+}
+
+.portfolio_box ul li {
+    width: 169px;
+    height: 171px;
+    background: #ccc;
+    margin: 7px;
+}
+
+.profile_social li a {
+    display: block;
+    color: #fff;
+    background: #474648;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    padding: 7px 0;
+    border-radius: 50%;
+}
+
+.skills_box .profile_sub_title:first-child {
+    margin-top: 0;
+}
+
+.skills_box ul {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.skills_box ul li {
+    border: 1px solid #7c7c7c;
+    height: 16px;
+    width: 16px;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+
+.skills_box ul li.full {
+    background: #7c7c7c;
+}
+
+.skills_box ul li.half {
+    position: relative;
+}
+
+.skills_box ul li.half:after {
+    background: #7c7c7c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55%;
+    content: '';
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
 
 
 /*===================== Profile Ends here  ======================*/

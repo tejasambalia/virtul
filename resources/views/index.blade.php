@@ -228,8 +228,9 @@
             </div>
             <div class="col-md-8">
                 <div class="profile_title_box">
-                    <h1 class="profile_name">Sanket Patel</h1>
-                    <p class="profile_desg">Website Designer/Developer</p>
+                    <!-- <h1 class="profile_name">Sanket Patel</h1> -->
+                    <img src="img/0.png" class="img-responsive center-block">
+                    <p class="profile_desg profile_sub_title text-center">Website Designer/Developer</p>
                 </div>
             </div>
         </div>
@@ -239,8 +240,8 @@
 <section class="profile_details">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h3 class="profile_title">Personal Details</h3>
+            <div class="col-md-3 profile_left_box">
+                <h3 class="profile_title"><span> Personal Details </span></h3>
                 <h4 class="profile_sub_title">D.O.B.</h4>
                 <p>21.08.1994</p>
                 <h4 class="profile_sub_title">Website</h4>
@@ -255,31 +256,94 @@
                     <li>Behind New Bus-Station,</li>
                     <li>Balasinor - 388255</li>
                 </ul>
-                <h4 class="profile_sub_title">Social Connections</h4>
-                <ul class="list-inline">
+                <h4 class="profile_sub_title"><span> Social Connections </span></h4>
+                <ul class="list-inline profile_social space10">
                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-            <div class="col-md-8">
-                <h3 class="profile_title">proffesional statement</h3>
+            <div class="col-md-9 profile_right_box">
+                <h3 class="profile_title"><span> proffesional statement </span></h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor magna, semper quis consequat id, aliquam at lorem. Nunc blandit arcu eget elit volutpat fermentum.
                 </p>
-                <h3 class="profile_title">awards</h3>
+                <h3 class="profile_title"><span> awards </span></h3>
                 <p>
                     Suspendisse potenti. Proin et accumsan dolor. Quisque pulvinar ut nisi non venenatis. Proin consequat fringilla tristique. Nulla quis neque vel est dapibus facilisis sed at dui.
                 </p>
-                <h3 class="profile_title">Expertise</h3>
+                <h3 class="profile_title"><span> Expertise </span></h3>
                 <p>
                     Donec vehicula quam sed nibh porttitor ullamcorper. Fusce at arcu eu orci euismod interdum quis sit amet elit. Aliquam ultrices vitae lorem in consectetur. Aliquam sollicitudin neque id quam dignissim, ut eleifend augue aliquet. In eu risus quis ante posuere efficitur. 
                 </p>
-                <h3 class="profile_title">top from profolio</h3>
-                <p>
-                    Quisque pulvinar euismod turpis. Duis a dui in massa tincidunt malesuada. Donec sollicitudin, ligula at elementum fringilla, nisl dolor faucibus justo, eget maximus dolor nunc tincidunt risus. Aliquam pharetra sollicitudin maximus. Vivamus finibus purus felis, vel pulvinar justo convallis et.
-                </p>
+                <h3 class="profile_title"><span> Skills </span></h3>
+                <div class="skills_box">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline">
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li></li>
+                            </ul>
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline">
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline">
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline">
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline skills_bar">
+                                <li class="full"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <h4 class="profile_sub_title">Donec vehicula quam</h4>
+                            <ul class="list-inline">
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="full"></li>
+                                <li class="half"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="profile_title"><span> top from portfolio </span></h3>
+                <div class="portfolio_box">
+                    <ul class="list-inline">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

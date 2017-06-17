@@ -37,5 +37,12 @@ Class General{
         }
         echo $msg;
 	}
+
+    function manageProfile($userProfile)
+    {
+        
+    }
 }
+
+
 ?>

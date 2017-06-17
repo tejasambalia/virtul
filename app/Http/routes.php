@@ -29,4 +29,7 @@ Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@
 
 Route::get('/verify/{userid}/{verificationcode}', ['as' => 'verify', 'uses' =>'UsersController@userVerification']); 
 
+//manage profile
 
+Route::get('/profile', ['as' => 'profile', 'uses' =>'UsersController@viewProfile']); 
+Route::post('/manageProfile', ['as' => 'manageProfile', 'uses' =>'UsersController@manageProfile']); 

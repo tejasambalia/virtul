@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\UserProfile;
 use App\Classes\General;
 use Mail;
 use DB;
@@ -241,5 +242,40 @@ class UsersController extends Controller
     {
         $verifyObject = new General();
         $verifyObject->verifyByUserIdVerifyId($userid,$verificationcode);       
+    }
+
+//get
+    public function viewProfile(Request $request)
+    {
+      //echo "get-enter";
+      // die();
+        $profileObj = new UserProfile;
+        //print_r($profileObj); exit;
+        //return view('accounts.ManageProfile');
+        return view('accounts.manageprofile',['userprofile'=>$profileObj]);//view('accounts.ManageProfile', ['UserProfile' => [$profileObj] ]);
+    }
+
+//post
+    public function manageProfile(Request $request)
+    {
+
+      $data = $request->only('Contact', 'fbLink','twitterLink','pinterestLink','website','DOB');
+      $usermodel = new UserProfile;
+      $test = $data['Contact'];
+      session(['sessionContact' => $test]);
+
+      $sessionvalue = session('sessionContact');
+      echo $sessionvalue;
+      die();
+      $usermodel->Contact = $data['Contact'];
+      $usermodel->fbLink = $data['fbLink'];
+      $usermodel->twitterLink = $data['twitterLink'];
+      $usermodel->pinterestLink = $data['pinterestLink'];
+      $usermodel->website = $data['website'];
+      $usermodel->DOB = $data['DOB'];
+      $usermodel->save();
+      die();  
+      
+
     }
 }

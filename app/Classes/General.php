@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\UserProfile;
 use App\Classes\General;
 use Mail;
 use DB;
@@ -38,9 +39,12 @@ Class General{
         echo $msg;
 	}
 
-    function manageProfile($userProfile)
+    function GetUserDataById($userId)
     {
+        $profileObj = new UserProfile;
+        $profileObj = DB::table('user_profiles')->where('userId', $userId);
         
+        return $profileObj;
     }
 }
 

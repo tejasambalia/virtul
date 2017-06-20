@@ -247,12 +247,23 @@ class UsersController extends Controller
 //get
     public function viewProfile(Request $request)
     {
-      //echo "get-enter";
-      // die();
-        $profileObj = new UserProfile;
-        //print_r($profileObj); exit;
-        //return view('accounts.ManageProfile');
-        return view('accounts.manageprofile',['userprofile'=>$profileObj]);//view('accounts.ManageProfile', ['UserProfile' => [$profileObj] ]);
+      $test = 2;
+      session(['loggedInUser' => $test]);//for testing 
+
+      $userId = session('loggedInUser');
+      $profileObj = new UserProfile;  
+      if($userId == null)
+      {
+        return view('accounts.manageprofile',['userprofile'=>$profileObj]);
+      }
+      else
+      {
+        $profileObj =UserProfile :: findByUserId($userId);
+        //$profileObj = $generalObj->GetUserDataById($userId);
+
+        return view('accounts.manageprofile',['userprofile'=>$profileObj]);
+      }
+        
     }
 
 //post
@@ -261,12 +272,7 @@ class UsersController extends Controller
 
       $data = $request->only('Contact', 'fbLink','twitterLink','pinterestLink','website','DOB');
       $usermodel = new UserProfile;
-      $test = $data['Contact'];
-      session(['sessionContact' => $test]);
-
-      $sessionvalue = session('sessionContact');
-      echo $sessionvalue;
-      die();
+    
       $usermodel->Contact = $data['Contact'];
       $usermodel->fbLink = $data['fbLink'];
       $usermodel->twitterLink = $data['twitterLink'];

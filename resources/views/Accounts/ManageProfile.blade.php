@@ -1,5 +1,5 @@
 
-{!! Form::model($userprofile, ['action' => ['UsersController@manageProfile']]) !!}
+{!! Form::model($userprofile, ['action' => ['UsersController@manageProfile', $userprofile->userId]]) !!}
  <div class="form-group">
        {!! Form::label('Contact', 'Contact') !!}
        {!! Form::text('Contact', '', ['class' => 'form-control']) !!}

@@ -858,8 +858,12 @@ header {
 .profile_img {
     width: 250px;
     border-radius: 50%;
-    overflow: hidden;
     border: 5px solid #f1f1f1;
+    position: relative;
+}
+
+.profile_img>img {
+    border-radius: 50%;
 }
 
 .profile_title {
@@ -889,6 +893,10 @@ header {
 .profile_right_box {
     border-left: 1px solid #eee;
     padding-left: 40px;
+}
+
+.profile_left_box {
+    padding-right: 40px;
 }
 
 .profile_left_box,
@@ -966,5 +974,34 @@ header {
     border-bottom-left-radius: 50%;
 }
 
+.profile_details .form-control {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    box-shadow: none;
+}
 
+.img_uploader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.img_uploader .fa {
+    font-size: 30px;
+    color: #474648;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border: 2px solid #f1f1f1;
+    border-radius: 50%;
+    padding: 12px 0px;
+    margin-top: 125px;
+    margin-left: 200px;
+    z-index: 999;
+    background: #fff;
+}
 /*===================== Profile Ends here  ======================*/

@@ -1,6 +1,8 @@
 @extends('header')
 @section('content')
 
+<link rel="stylesheet" type="text/css" href="css/jquery.rateyo.css">
+
 <form>
 
 <section class="profile_header">
@@ -9,14 +11,22 @@
             <div class="col-md-4">
                 <div class="profile_img">
                     <img src="img/PicsArt_11-14-12.30.45.jpg" class="img-responsive">
-                    <input type="file" name="">
+                    <input type="file" id="file1" name="image" accept="image/*" capture style="display:none"/>
+                    <div class="img_uploader">
+                        <div class="view_table">
+                            <div class="view_cell">                            
+                                <i class="fa fa-upload" aria-hidden="true" id="upfile1"></i>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="profile_title_box">
                     <!-- <h1 class="profile_name">Sanket Patel</h1> -->
-                    <input type="text" name="profile_name" placeholder="Sanket Patel">
-                    <input type="text" name="designation" class="form-control" placeholder="Web Developer">
+                    <input type="text" name="profile_name" class="form-control" placeholder="Sanket Patel">
+                    <input type="text" name="designation" class="form-control space10" placeholder="Web Developer">
                 </div>
             </div>
         </div>
@@ -62,72 +72,43 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline">
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li></li>
-                            </ul>
+                            <div class="rateyo"></div>
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline">
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                            <div class="rateyo"></div>
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline">
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                            </ul>
+                            <div class="rateyo"></div>
                         </div>
                         <div class="col-md-6">
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline">
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                            <div class="rateyo"></div>
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline skills_bar">
-                                <li class="full"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                            <div class="rateyo"></div>
                             <h4 class="profile_sub_title">Donec vehicula quam</h4>
-                            <ul class="list-inline">
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="full"></li>
-                                <li class="half"></li>
-                                <li></li>
-                            </ul>
+                            <div class="rateyo"></div>
                         </div>
                     </div>
                 </div>
-                <h3 class="profile_title"><span> top from portfolio </span></h3>
-                <div class="portfolio_box">
-                    <ul class="list-inline">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+                <div  class="space30"></div>
             </div>
         </div>
     </div>
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.rateyo.js"></script>
+<script type="text/javascript">
+    $(".rateyo").rateYo({
+        fullStar: true,
+        normalFill: "#dddddd",
+        ratedFill: "#474648",
+        starWidth: "22px",
+        spacing   : "4px"
+    });
+</script>
+<script type="text/javascript">
+    $("#upfile1").click(function () {
+        $("#file1").trigger('click');
+    });
+</script>
 </form>
 @endsection

@@ -218,6 +218,13 @@
     </div>
 </section> -->
 
+<link rel="stylesheet" type="text/css" href="css/select2.css"></link>
+<link rel="stylesheet" type="text/css" href="css/datepicker3.css"></link>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-tagsinput.css"></link>
+<link rel="stylesheet" type="text/css" href="css/typeahead.css"></link>
+<link rel="stylesheet" type="text/css" href="css/editable.css">
+
+
 <section class="profile_header">
     <div class="container">
         <div class="row">
@@ -247,7 +254,7 @@
                 <h4 class="profile_sub_title">Website</h4>
                 <p>www.knowamp.com</p>
                 <h4 class="profile_sub_title">Phone</h4>
-                <p>7405094570</p>
+                <p class="editable-field" id="textId">7405094570</p>
                 <h4 class="profile_sub_title">Email</h4>
                 <p>sanketpatel2108@gmail.com</p>
                 <h4 class="profile_sub_title">Address</h4>
@@ -348,5 +355,20 @@
         </div>
     </div>
 </section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- <script src="js/vendors.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Syntaxhighlighter -->
+<script type="text/javascript" src="js/select2.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+<script type="text/javascript" src="js/typeahead.bundle.js"></script> -->
+<script src="js/editstrap.min.js"></script>
+
+<script type="text/javascript">
+        $("#textId").editstrap();
+</script>
+
 
 @endsection

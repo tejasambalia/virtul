@@ -16,10 +16,7 @@ class UserProfile extends Model
 
     public static function findByUserid($userId)
     {
-    	$profileObj = new UserProfile;
-        
-        $profileObj = DB::table('user_profiles')->where('userId', $userId);
-     	echo $profileObj->fbLink;   die();
+        $profileObj = DB::table('user_profiles')->where('userId', $userId)->first();
         return $profileObj;
     }
 }

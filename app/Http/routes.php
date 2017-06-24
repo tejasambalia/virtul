@@ -23,6 +23,10 @@ Route::get('/editProfile', function(){
 	return view('editProfile');
 });
 
+Route::get('/home', function(){
+	return view('home');
+});
+
 Route::get('/signin', ['as' => 'signin', 'uses' =>'UsersController@signin']); //Signin landing page
 Route::get('/signup', ['as' => 'signup', 'uses' =>'UsersController@signup']); //Signup landing page
 

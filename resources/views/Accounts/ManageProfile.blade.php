@@ -1,5 +1,12 @@
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-{!! Form::model($userprofile, ['action' => ['UsersController@manageProfile', $userprofile->userId]]) !!}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Proza+Libre:400,400i,500,500i" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <div class="col-xs-6 col-xs-offset-3">
+    <h3>User Profile</h3>
+
+{!! Form::model($userprofile, ['action' => ['UsersController@manageProfile', $userprofile->Id, 'files' => true , 'enctype' => 'multipart/formdata']]) !!}
  <div class="form-group">
 
        {!! Form::label('Contact', 'Contact') !!}
@@ -38,10 +45,10 @@
 
      <div class="form-group">
        {!! Form::label('profilePicture', 'Profile Picture') !!}
-       {!! Form::file('profilePicture', null, ['class' => 'form-control']) !!}
+       {!! Form::file('profilePicture', ['class' => 'form-control']) !!}
      </div>
 
      <button class="btn btn-success" type="submit">Update profile</button>
 
 {!! Form::close() !!}
-
+</div>

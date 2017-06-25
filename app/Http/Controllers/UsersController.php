@@ -118,6 +118,7 @@ class UsersController extends Controller
     if(\Auth::attempt($data)&&$check_verified){
         //$role = DB::table('users')->where('email', $request['email'])->value('role');
       if($api['api']==1){
+        echo "success login";die();
         return Response::json(['success' => 'true'], 200);
       }
       else{
@@ -269,8 +270,26 @@ class UsersController extends Controller
 //post
     public function manageProfile(Request $request)
     {
+      dd($request->all());
+      $profilePicture = dd($request->file('profilePicture'));
+      if($profilePicture == 
+        null)
+      {
+        echo 'ok';
+      }
+      print_r($profilePicture);
+        die();
+       // $imageName = $product->id . '.' . 
+       //  $request->file('image')->getClientOriginalExtension();
+      echo $profilePicture;die();
+         $rules = array('profilePicture' => 'required|mimes:jpeg,bmp,png',);
+         $validator = Validator::make($file, $rules);
+         if ($validator->fails()) {
+             // send back to the page with the input data with errors
+             return 'Image not valid';
+         }
 
-      $data = $request->only('Contact', 'fbLink','twitterLink','pinterestLink','website','DOB');
+      $data = $request->only('Contact', 'fbLink','twitterLink','pinterestLink','website','DOB','profilePicture');
       $usermodel = new UserProfile;
     
       $usermodel->Contact = $data['Contact'];
